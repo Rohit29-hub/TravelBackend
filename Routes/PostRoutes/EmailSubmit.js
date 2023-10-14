@@ -6,15 +6,15 @@ const emailSender = require('../../Controller/SendMail')
 router.post('/', async (req, res) => {
     try {
         const userEmail = req.body.email;
-        const existingUserEmail = await UserEmail.findOne({ email: userEmail });
-        if (existingUserEmail) {
-            return res.status(400).json({ error: 'Email already exists' });
-        } else {
+        // const existingUserEmail = await UserEmail.findOne({ email: userEmail });
+        // if (existingUserEmail) {
+        //     return res.status(400).json({ error: 'Email already exists' });
+        // } else {
             const newUserEmail = new UserEmail({
                 email: userEmail,
             });
             await newUserEmail.save();
-        }
+        // }
         res.status(200).json({ message: 'Email submitted successfully' });
 
         // email send
