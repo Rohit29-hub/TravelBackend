@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 //cross origin - sharing resources !
 // Allow requests from your frontend domain (replace 'http://yourfrontenddomain.com' with your actual domain)
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://rohittttt.online',
 }));
 
 // app.use(cors({
